@@ -33,4 +33,10 @@ public class ConexionDB {
         return instanciaConexionDB;
     }
 
+    public static class getInstanciaConexionDB {
+
+        public getInstanciaConexionDB() {
+        }
+    }
+
 }

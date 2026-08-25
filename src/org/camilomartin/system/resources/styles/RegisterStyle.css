@@ -1,24 +1,15 @@
 /*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to edit this template
-*/
-/*
-    Created on : 18 ago 2026, 16:18:16
-    Author     : informatica
-
-    NOTA: las propiedades "transition-property" / "transition-duration" son CSS
-    Transitions reales de JavaFX, soportadas desde JavaFX 23. Este proyecto usa
-    xmlns="http://javafx.com/javafx/21.0.1", así que si aun no han actualizado
-    el JDK/JavaFX, estas lineas simplemente seran ignoradas (sin error) y los
-    cambios de color/tamano se veran instantaneos en vez de animados. En cuanto
-    actualicen a JavaFX 23+, las animaciones funcionan solas.
+    RegisterStyle.css
+    Hermano de LogingStyle.css: misma paleta, mismos tokens (-bg-color, -ink-color,
+    -accent-red, -accent-yellow, -white, -muted-gray) y mismo tipo de animaciones
+    (CSS Transitions, soportadas desde JavaFX 23) para que Login y Registro se
+    sientan como una sola identidad visual.
 */
 
 .root {
     -fx-background-color: #F2ECE4;
     -fx-font-family: "Arial Black", "Arial Bold", sans-serif;
 
-    /* ---- Design tokens compartidos con RegisterStyle.css ---- */
     -bg-color: #F2ECE4;
     -ink-color: #111111;
     -accent-red: #E31E24;
@@ -29,7 +20,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 .label,
 .etiqueta {
-    -fx-font-size: 14px;
+    -fx-font-size: 13px;
     -fx-font-weight: bold;
     -fx-text-fill: -ink-color;
     -fx-font-family: "Arial", sans-serif;
@@ -38,6 +29,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 Label {
     -fx-content-display: center;
+}
+
+/* ================= TITULO / GRIDPANE ================= */
+.grid-registro {
+    -fx-hgap: 12px;
+    -fx-vgap: 10px;
 }
 
 /* ================= CAMPOS DE TEXTO ================= */
@@ -54,7 +51,6 @@ Label {
     -fx-padding: 6px 8px;
     -fx-prompt-text-fill: -muted-gray;
 
-    /* animacion: el borde se anima suavemente al enfocar */
     transition-property: -fx-border-color, -fx-border-width;
     transition-duration: 0.25s;
 }
@@ -67,6 +63,13 @@ Label {
     -fx-effect: dropshadow(gaussian, rgba(227,30,36,0.55), 10, 0.35, 0, 0);
 }
 
+/* Estado de error, util para validacion (ej. contraseñas que no coinciden) */
+.campo-error {
+    -fx-border-color: -accent-red;
+    -fx-border-width: 4px;
+    -fx-effect: dropshadow(gaussian, rgba(227,30,36,0.75), 12, 0.4, 0, 0);
+}
+
 /* ================= ENLACES ================= */
 .hyperlink,
 .link {
@@ -77,7 +80,6 @@ Label {
     -fx-font-size: 12px;
     -fx-letter-spacing: 1px;
 
-    /* animacion: color y ligero acercamiento al pasar el mouse */
     transition-property: -fx-text-fill, -fx-scale-x, -fx-scale-y;
     transition-duration: 0.2s;
 }
@@ -96,7 +98,7 @@ Label {
 
 /* ================= BOTONES ================= */
 .button,
-#btn-login {
+#btn-registro {
     -fx-background-color: -ink-color;
     -fx-text-fill: -white;
     -fx-font-weight: bold;
@@ -107,13 +109,12 @@ Label {
     -fx-padding: 6px 18px;
     -fx-cursor: hand;
 
-    /* animacion: color de fondo, borde y escala se interpolan */
     transition-property: -fx-background-color, -fx-border-color, -fx-scale-x, -fx-scale-y;
     transition-duration: 0.25s;
 }
 
 .button:hover,
-#btn-login:hover {
+#btn-registro:hover {
     -fx-background-color: -accent-red;
     -fx-border-color: -ink-color;
     -fx-scale-x: 1.04;
@@ -121,7 +122,7 @@ Label {
 }
 
 .button:pressed,
-#btn-login:pressed {
+#btn-registro:pressed {
     -fx-background-color: -accent-yellow;
     -fx-text-fill: -ink-color;
     -fx-border-color: -ink-color;
@@ -145,15 +146,10 @@ Label {
     -fx-padding: 10px;
 }
 
-.campo {
-    -fx-background-color: -white;
-}
-
 .circle {
     -fx-fill: -white;
     -fx-stroke: -accent-red;
 
-    /* animacion sutil de "respiracion" al hacer hover, por si se usa como boton/avatar */
     transition-property: -fx-scale-x, -fx-scale-y, -fx-stroke;
     transition-duration: 0.3s;
 }
