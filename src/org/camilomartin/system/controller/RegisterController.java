@@ -6,17 +6,98 @@ package org.camilomartin.system.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import org.camilomartin.system.utils.AlertInformation;
+import org.camilomartin.system.utils.Validations;
+import org.camilomartin.system.utils.ViewFactory;
 
-/**
- *
- * @author informatica
- */
 public class RegisterController implements Initializable {
+
+    /**
+     *
+     * @author informatica
+     */
+    @FXML
+    private TextField txtName;
+    @FXML
+    private TextField txtLastName;
+    @FXML
+    private TextField txtUserName;
+    @FXML
+    private TextField txtEmail;
+    @FXML
+    private PasswordField pwdPassword;
+    @FXML
+    private PasswordField PwdConfirmPassword;
+    @FXML
+    private Button btnRegister;
+    @FXML
+    private Button btnCancelRegister;
+    private Validations validate = new Validations();
+    private AlertInformation alertInfo = new AlertInformation();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO: inicializacion del formulario de registro
     }
-    
+
+    @FXML
+    public void onCancelRegister(MouseEvent event) {
+        ViewFactory viewFacto = new ViewFactory();
+        viewFacto.viewLogin();
+    }
+
+    @FXML
+    public void onRegisterUser(MouseEvent event) {
+        // 1. Validate Email
+        String email = txtEmail.getText().trim();
+        boolean validEmail = validate.validateEmail(email);
+        if (!validEmail) {
+            alertInfo.viewAlert("Formato de correo inválido", "Error de Campo", "Corrija el correo electrónico", "error");
+            return; // Stop execution if email is invalid
+        }
+
+        // 2. Retrieve other fields
+        String user = txtUserName.getText().trim();
+        String name = txtName.getText().trim();
+        String lastName = txtLastName.getText().trim();
+        String password = pwdPassword.getText().trim();
+        String confirmPassword = PwdConfirmPassword.getText().trim();
+
+        // 3. Validate that no fields are empty
+        if (validate.validateTextFieldEmpty(user)
+                || validate.validateTextFieldEmpty(name)
+                || validate.validateTextFieldEmpty(lastName)
+                || validate.validateTextFieldEmpty(password)
+                || validate.validateTextFieldEmpty(confirmPassword)) {
+
+            alertInfo.viewAlert("Campos incompletos", "Error de Campo", "Por favor, rellene todos los campos", "error");
+            return; // Stop execution if any field is empty
+        }
+
+        // 4. Validate that passwords match
+        if (!password.equals(confirmPassword)) {
+            alertInfo.viewAlert("Contraseñas distintas", "Error de Campo", "Las contraseñas no coinciden", "error");
+            return;
+        }
+
+        // --- All validations passed ---
+        // 5. TODO: Add your database/service logic here to save the user
+        // Example: userService.register(user, name, lastName, email, password);
+        // 6. Show success alert
+        alertInfo.viewAlert("Registro completado", "Éxito", "El usuario ha sido registrado correctamente", "info");
+
+        // 7. Clear the text fields for the next registration
+        txtName.clear();
+        txtLastName.clear();
+        txtUserName.clear();
+        txtEmail.clear();
+        pwdPassword.clear();
+        PwdConfirmPassword.clear();
+    }
+
 }

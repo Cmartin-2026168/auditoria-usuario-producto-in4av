@@ -38,11 +38,11 @@ public class ViewFactory {
                 SceneManager.getInstanciaSceneManager()
                         .getMainStage().setTitle("REGISTRO DE USUARIO");
                 SceneManager.getInstanciaSceneManager()
-                        .getMainStage().setResizable(false);
-                scene = loadFileFXML("RegisterView.fxml", 400, 500);
+                        .getMainStage().setResizable(true);
+                scene = loadFileFXML("RegisterView.fxml", 340, 470);
             }
             default ->
-                scene = loadFileFXML("LoginView.fxml", 400, 500);
+                scene = loadFileFXML("LoginView.fxml", 340, 370);
         }
         SceneManager.getInstanciaSceneManager().changeScene(scene);
     } catch (Exception e) {

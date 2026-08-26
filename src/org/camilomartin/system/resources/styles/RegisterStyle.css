@@ -33,8 +33,8 @@ Label {
 
 /* ================= TITULO / GRIDPANE ================= */
 .grid-registro {
-    -fx-hgap: 12px;
-    -fx-vgap: 10px;
+    -fx-hgap: 16px;
+    -fx-vgap: 12px;
 }
 
 /* ================= CAMPOS DE TEXTO ================= */
