@@ -85,10 +85,41 @@ public class RegisterController implements Initializable {
             return;
         }
 
-        // --- All validations passed ---
-        // 5. TODO: Add your database/service logic here to save the user
-        // Example: userService.register(user, name, lastName, email, password);
-        // 6. Show success alert
+        String msgField = "";
+        if (validate.validateTextLength(user, 25) == false) {
+            msgField = "El campo USUARIO es mayor a 25 letras";
+        }
+        if (validate.validateTextLength(name, 50) == false) {
+            msgField = "El campo NOMBRES es mayor a 50 letras";
+        }
+        if (validate.validateTextLength(lastName, 50) == false) {
+            msgField = "El campo APELLIDOS es mayor a 50 letras";
+        }
+        if (validate.validateTextLength(email, 50) == false) {
+            msgField = "El campo CORREO es mayor a 50 letras";
+        }
+        if (validate.validateTextLength(password, 35) == false) {
+            msgField = "El campo CONTRASEÑA es mayor a 35 letras";
+        }
+        if (validate.validateTextLength(confirmPassword, 35) == false) {
+            msgField = "El campo CONFIRMAR CONTRASEÑA es mayor a 35 letras";
+        }
+
+        if (msgField.isEmpty() == false) {
+            alertInfo.viewAlert("ERROR", "ERROR DE CAMPO", "ERROR LONGITUD DE CAMPO",
+                    msgField);
+            return;
+        }
+        
+        if(validate.equalsText(password, confirmPassword)== false){
+        alertInfo.viewAlert("ERROR", "ERROR DE contraseña", "no coinciden las contraseñas",
+                    msgField);
+            return;
+        }
+            
+            
+            
+
         alertInfo.viewAlert("Registro completado", "Éxito", "El usuario ha sido registrado correctamente", "info");
 
         // 7. Clear the text fields for the next registration
@@ -98,6 +129,7 @@ public class RegisterController implements Initializable {
         txtEmail.clear();
         pwdPassword.clear();
         PwdConfirmPassword.clear();
+
     }
 
 }

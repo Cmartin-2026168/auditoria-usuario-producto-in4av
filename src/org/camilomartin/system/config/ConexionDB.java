@@ -7,14 +7,13 @@ import java.sql.SQLException;
 public class ConexionDB {
 
     private static ConexionDB instanciaConexionDB;
-    private static Connection connection;
+    private Connection connection;
 
-    private ConexionDB() throws SQLException {
+    private ConexionDB() {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection("jdbc:mysql://"
-                    + Enviroment.LOCATION_SERVICE + "/"
-                    + Enviroment.DATA_BASE,
+            connection = DriverManager.getConnection(
+                    "jdbc:mysql://" + Enviroment.LOCATION_SERVICE + "/" + Enviroment.DATA_BASE,
                     Enviroment.USER,
                     Enviroment.PASSWORD);
         } catch (ClassNotFoundException classNotFound) {
@@ -26,17 +25,19 @@ public class ConexionDB {
         }
     }
 
-    public static ConexionDB getInstanciaConexionDB() throws SQLException {
+    public static ConexionDB getInstanciaConexionDB() {
         if (instanciaConexionDB == null) {
             instanciaConexionDB = new ConexionDB();
         }
         return instanciaConexionDB;
     }
 
-    public static class getInstanciaConexionDB {
+    public Connection getConnection() {
+        return connection;
+    }
 
-        public getInstanciaConexionDB() {
-        }
+    public void setConnection(Connection connection) {
+        this.connection = connection;
     }
 
 }

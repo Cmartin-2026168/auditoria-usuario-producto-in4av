@@ -37,8 +37,8 @@
                 <RowConstraints minHeight="34.0" prefHeight="34.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <PasswordField fx:id="pwdConfirmPassword" styleClass="campo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
-                  <PasswordField fx:id="pwdPasword" styleClass="campo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                  <PasswordField fx:id="PwdConfirmPassword" styleClass="campo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                  <PasswordField fx:id="pwdPassword" styleClass="campo" GridPane.columnIndex="1" GridPane.rowIndex="4" />
                   <TextField fx:id="txtEmail" styleClass="campo" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <TextField fx:id="txtLastName" styleClass="campo" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                   <TextField fx:id="txtName" styleClass="campo" GridPane.columnIndex="1" GridPane.rowIndex="1" />
