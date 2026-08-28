@@ -33,19 +33,21 @@ public class ViewFactory {
     try {
         switch (nameFile) {
             case "login" ->
-                scene = loadFileFXML("LoginView.fxml", 340, 370);
+                scene = loadFileFXML("LoginView.fxml", 800, 600);
             case "register" -> {
                 SceneManager.getInstanciaSceneManager()
                         .getMainStage().setTitle("REGISTRO DE USUARIO");
                 SceneManager.getInstanciaSceneManager()
                         .getMainStage().setResizable(true);
-                scene = loadFileFXML("RegisterView.fxml", 340, 470);
+                scene = loadFileFXML("RegisterView.fxml", 800, 616);
             }
             default ->
-                scene = loadFileFXML("LoginView.fxml", 340, 370);
+                scene = loadFileFXML("LoginView.fxml", 800, 600);
         }
         SceneManager.getInstanciaSceneManager().changeScene(scene);
     } catch (Exception e) {
+        System.err.println("Error al cargar la vista '" + nameFile + "': " + e);
+        e.printStackTrace();
     }
 }
     

@@ -12,6 +12,8 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import org.camilomartin.system.service.UserService;
+import org.camilomartin.system.service.UserStatus;
 import org.camilomartin.system.utils.AlertInformation;
 import org.camilomartin.system.utils.Validations;
 import org.camilomartin.system.utils.ViewFactory;
@@ -40,6 +42,7 @@ public class RegisterController implements Initializable {
     private Button btnCancelRegister;
     private Validations validate = new Validations();
     private AlertInformation alertInfo = new AlertInformation();
+    private UserService userService = new UserService();
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -110,17 +113,32 @@ public class RegisterController implements Initializable {
                     msgField);
             return;
         }
-        
-        if(validate.equalsText(password, confirmPassword)== false){
-        alertInfo.viewAlert("ERROR", "ERROR DE contraseña", "no coinciden las contraseñas",
+
+        if (validate.equalsText(password, confirmPassword) == false) {
+            alertInfo.viewAlert("ERROR", "ERROR DE contraseña", "no coinciden las contraseñas",
                     msgField);
             return;
         }
-            
-            
-            
 
-        alertInfo.viewAlert("Registro completado", "Éxito", "El usuario ha sido registrado correctamente", "info");
+        UserStatus status = userService.createUser(user, name, lastName, email, password);
+
+        switch (status) {
+            case USER_CREATED -> {
+                alertInfo.viewAlert("Registro completado", "Éxito", "El usuario ha sido registrado correctamente", "info");
+                txtName.clear();
+                txtLastName.clear();
+                txtUserName.clear();
+                txtEmail.clear();
+                pwdPassword.clear();
+                PwdConfirmPassword.clear();
+            }
+            case ERROR_USER_CREATED ->
+                alertInfo.viewAlert("Error al registrar", "Error", "Ocurrió un problema al guardar el usuario", "error");
+            case EMPTY_FIELDS ->
+                alertInfo.viewAlert("Campos incompletos", "Error de Campo", "Por favor, rellene todos los campos", "error");
+            default -> {
+            }
+        }
 
         // 7. Clear the text fields for the next registration
         txtName.clear();

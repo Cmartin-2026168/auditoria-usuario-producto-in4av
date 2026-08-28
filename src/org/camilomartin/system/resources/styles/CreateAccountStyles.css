@@ -1,0 +1,133 @@
+@import "IdentityStyles.css";
+
+.root {
+    -fx-background-color: linear-gradient(to bottom right, -page-bg-1, -page-bg-2);
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------- Tarjeta (dos capas apiladas) ---------- */
+
+.tarjeta-registro {
+    -fx-effect: dropshadow(gaussian, rgba(59,34,150,0.28), 40, 0, 0, 18);
+}
+
+.capa-blanca {
+    -fx-background-color: -card;
+    -fx-background-radius: 26;
+    -fx-alignment: center;
+    -fx-spacing: 11;
+    -fx-padding: 40 410 40 46;
+}
+
+.titulo-formulario {
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -ink;
+}
+
+.subtitulo-formulario {
+    -fx-font-size: 12px;
+    -fx-text-fill: -muted;
+}
+
+.grupo-campo {
+    -fx-spacing: 5;
+}
+
+.etiqueta-campo {
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -muted;
+    -fx-letter-spacing: 1.1px;
+}
+
+.campo-entrada {
+    -fx-background-color: -field-bg;
+    -fx-background-radius: 10;
+    -fx-border-color: -field-border;
+    -fx-border-radius: 10;
+    -fx-border-width: 1.2;
+    -fx-padding: 9 13;
+    -fx-font-size: 13px;
+    -fx-text-fill: -ink;
+    -fx-prompt-text-fill: #A6A6B0;
+}
+
+.campo-entrada:focused {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: -primary;
+    -fx-border-width: 1.6;
+    -fx-effect: dropshadow(gaussian, -primary-soft, 10, 0, 0, 0);
+}
+
+.error {
+    -fx-text-fill: -error;
+    -fx-font-size: 11px;
+    -fx-wrap-text: true;
+}
+
+.boton-primario {
+    -fx-background-color: linear-gradient(to right, -primary-solid, -primary-solid-deep);
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 13.5px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 11;
+    -fx-padding: 12 0;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(75,50,179,0.4), 16, 0, 0, 7);
+}
+
+.boton-primario:hover {
+    -fx-background-color: -primary-solid-deep;
+}
+
+.boton-primario:pressed {
+    -fx-background-color: derive(-primary-solid-deep, -12%);
+    -fx-effect: none;
+}
+
+/* ---------- Panel curvo (blob) ---------- */
+
+.panel-color {
+    -fx-max-width: 380;
+    -fx-background-color: linear-gradient(to bottom right, -primary, -primary-deep);
+    -fx-background-radius: 300 26 26 300;
+    -fx-alignment: center;
+    -fx-spacing: 14;
+    -fx-padding: 40 44;
+}
+
+.panel-titulo {
+    -fx-font-size: 23px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #FFFFFF;
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+}
+
+.panel-cuerpo {
+    -fx-font-size: 12.5px;
+    -fx-text-fill: rgba(255,255,255,0.78);
+    -fx-text-alignment: center;
+    -fx-wrap-text: true;
+    -fx-line-spacing: 2px;
+}
+
+.boton-fantasma {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 1px;
+    -fx-border-color: rgba(255,255,255,0.85);
+    -fx-border-width: 1.6;
+    -fx-border-radius: 11;
+    -fx-background-radius: 11;
+    -fx-padding: 10 34;
+    -fx-cursor: hand;
+}
+
+.boton-fantasma:hover {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: -primary-deep;
+}
