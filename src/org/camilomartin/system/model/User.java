@@ -1,10 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.camilomartin.system.model;
 
 public class User {
+
     private String name;
     private String lastname;
     private String email;
@@ -12,11 +9,8 @@ public class User {
     private String user;
     private String idUser;
 
-    // Constructor vacío
     public User() {
     }
-
-    // Constructor con todos los parámetros
 
     public User(String name, String lastname, String email, String password, String user) {
         this.name = name;
@@ -25,7 +19,6 @@ public class User {
         this.password = password;
         this.user = user;
     }
-    
 
     // Getters y Setters
     public String getName() {
@@ -79,13 +72,13 @@ public class User {
     // Método toString
     @Override
     public String toString() {
-        return "User{" +
-                "name='" + name + '\'' +
-                ", lastname='" + lastname + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", user='" + user + '\'' +
-                ", idUser='" + idUser + '\'' +
-                '}';
+        return "User{"
+                + "name='" + name + '\''
+                + ", lastname='" + lastname + '\''
+                + ", email='" + email + '\''
+                + ", password='" + password + '\''
+                + ", user='" + user + '\''
+                + ", idUser='" + idUser + '\''
+                + '}';
     }
 }

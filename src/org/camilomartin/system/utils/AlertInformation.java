@@ -1,32 +1,16 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.camilomartin.system.utils;
 
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.DialogPane;
+import javafx.scene.layout.Region;
 
 public class AlertInformation {
 
-    /**
-     * Public no-argument constructor
-     */
     public AlertInformation() {
-        // Constructor logic (if any)
     }
 
-    /**
-     * Displays a JavaFX Alert based on the provided parameters.
-     *
-     * @param message The content text of the alert
-     * @param title The title of the alert window
-     * @param header The header text of the alert
-     * @param parameter The string parameter determining the AlertType
-     */
     public void viewAlert(String message, String title, String header, String parameter) {
-
-        // Switch expression using arrow-case syntax (lambda-style rules)
         AlertType type = switch (parameter.toLowerCase()) {
             case "info", "information" ->
                 AlertType.INFORMATION;
@@ -36,19 +20,24 @@ public class AlertInformation {
                 AlertType.ERROR;
             case "confirm", "confirmation" ->
                 AlertType.CONFIRMATION;
-//            case "none" ->
-//                AlertType.NONE;
             default ->
                 AlertType.WARNING;
         };
 
-        // Create and configure the Alert object
         Alert alert = new Alert(type);
         alert.setTitle(title);
         alert.setHeaderText(header);
         alert.setContentText(message);
 
-        // Display the alert and wait for user response
+        DialogPane pane = alert.getDialogPane();
+        pane.getStylesheets().add(getClass().getResource("/org/camilomartin/system/resources/styles/AlertInfoStyles.css").toExternalForm());
+        pane.getStyleClass().addAll("mi-alert", type.name().toLowerCase());
+        pane.setPrefWidth(360);
+pane.setMaxWidth(300);
+        Region icon = new Region();
+        icon.getStyleClass().add("alert-icon");
+        pane.setGraphic(icon);
+
         alert.showAndWait();
     }
 }

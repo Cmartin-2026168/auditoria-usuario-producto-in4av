@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="800.0" stylesheets="@../resources/styles/LoginStyles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.camilomartin.system.controller.LoginController">
+<VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="807.0" stylesheets="@../resources/styles/LoginStyles.css" xmlns="http://javafx.com/javafx/26" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.camilomartin.system.controller.LoginController">
    <children>
       <StackPane fx:id="raiz" prefHeight="480.0" prefWidth="760.0" styleClass="tarjeta-login">
          <children>
@@ -22,9 +22,9 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="91.0" prefWidth="384.0">
                      <children>
-                        <ImageView fitHeight="102.0" fitWidth="272.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="177.0" fitWidth="325.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/image/cartyx_logo.png" />
+                              <Image url="@../resources/image/Aoyume_Logo.png" />
                            </image>
                         </ImageView>
                      </children>
@@ -39,7 +39,7 @@
                   <VBox styleClass="grupo-campo">
                      <children>
                         <Label styleClass="etiqueta-campo" text="USUARIO" />
-                        <TextField fx:id="txtUser" maxWidth="Infinity" promptText="Ej. mgomez" styleClass="campo-entrada" />
+                        <TextField fx:id="txtUser" maxWidth="Infinity" promptText="Ej. K-Teto" styleClass="campo-entrada" />
                      </children>
                   </VBox>
 
@@ -71,7 +71,7 @@
             <VBox maxWidth="381.0" prefHeight="496.0" prefWidth="381.0" styleClass="panel-color" StackPane.alignment="CENTER_RIGHT">
                <children>
                   <Label styleClass="panel-titulo" text="¡Hola!" />
-                  <Label styleClass="panel-cuerpo" text="Crea una cuenta de cliente para comprar nuestros productos y llevar el control de tus pedidos." />
+                  <Label styleClass="panel-cuerpo" text="Crea una cuenta de cliente para poder acceder a todos nuestros servicios" />
                   <Hyperlink fx:id="linkRegistro" onAction="#onRegister" styleClass="boton-fantasma" text="CREAR CUENTA">
                      <VBox.margin>
                         <Insets top="6.0" />
@@ -79,9 +79,9 @@
                   </Hyperlink>
                   <HBox alignment="BASELINE_CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="159.0" prefWidth="282.0">
                      <children>
-                        <ImageView fitHeight="184.0" fitWidth="182.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="201.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../resources/image/rem_feliz.png" />
+                              <Image url="@../resources/image/Teto_Imagen.png" />
                            </image>
                         </ImageView>
                      </children>

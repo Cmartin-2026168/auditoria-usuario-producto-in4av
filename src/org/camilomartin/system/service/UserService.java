@@ -16,7 +16,7 @@ public class UserService {
         }
 
         try {
-            User newUser = new User(name, lastName, email, password, user);  /////
+            User newUser = new User(name, lastName, email, password, user);  
             userRepo.create(newUser);
             return UserStatus.USER_CREATED;
         } catch (Exception e) {

@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package org.camilomartin.system.controller;
 
 import java.net.URL;
@@ -20,10 +16,6 @@ import org.camilomartin.system.utils.ViewFactory;
 
 public class RegisterController implements Initializable {
 
-    /**
-     *
-     * @author informatica
-     */
     @FXML
     private TextField txtName;
     @FXML

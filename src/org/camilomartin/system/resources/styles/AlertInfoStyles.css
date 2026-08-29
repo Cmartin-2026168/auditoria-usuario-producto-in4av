@@ -1,0 +1,170 @@
+@import "IdentityStyles.css";
+
+.root {
+    -warn-deep: #E0A83A;
+    -success: #8FAE6E;
+    -success-deep: derive(-success, -20%);
+}
+ 
+.dialog-pane.mi-alert {
+    -fx-background-color: -card;
+    -fx-border-color: -ink;
+    -fx-border-width: 4;
+    -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    
+    -fx-max-width: 380;
+    -fx-pref-width: 360;
+}
+ 
+.dialog-pane.mi-alert > .header-panel {
+    -fx-background-color: -ink;
+    -fx-padding: 4 10;
+}
+ 
+.dialog-pane.mi-alert > .header-panel .label {
+    -fx-text-fill: white;
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-letter-spacing: 0.8px;
+}
+ 
+.dialog-pane.mi-alert > .content.label {
+    -fx-text-fill: -ink;
+    -fx-font-size: 13px;
+    -fx-padding: 10 12;
+    -fx-wrap-text: true;
+}
+ 
+.dialog-pane.mi-alert > .button-bar > .container {
+    -fx-background-color: -card;
+    -fx-padding: 6 12;
+}
+ 
+.dialog-pane.mi-alert .button-bar .button {
+    -fx-background-color: -field-bg;
+    -fx-text-fill: -ink;
+    -fx-font-weight: bold;
+    -fx-background-radius: 0;
+    -fx-border-color: -ink;
+    -fx-border-width: 2;
+    -fx-padding: 8 18;
+    -fx-cursor: hand;
+}
+ 
+.dialog-pane.mi-alert .button-bar .button:hover {
+    -fx-background-color: -ink;
+    -fx-text-fill: white;
+}
+ 
+/* ---------- Icono: Region vacio estilizado como imagen de fondo ---------- */
+
+.dialog-pane.mi-alert > .header-panel > .graphic-container {
+    -fx-padding: 0;
+    -fx-alignment: center;
+}
+ 
+.dialog-pane.mi-alert .alert-icon {
+    -fx-background-repeat: no-repeat;
+    -fx-background-position: center;
+    
+    -fx-background-size: contain;
+}
+ 
+/* Gumi (372x286, mas ancha que alta) -> caja 4:3 aprox */
+.dialog-pane.mi-alert.information .alert-icon,
+.dialog-pane.mi-alert.confirmation .alert-icon {
+    -fx-pref-width: 118;
+    -fx-pref-height: 90;
+    -fx-min-width: 118;
+    -fx-min-height: 90;
+    -fx-max-width: 118;
+    -fx-max-height: 90;
+}
+ 
+/* Neru (309x371, mas alta que ancha) -> caja 5:6 aprox */
+.dialog-pane.mi-alert.warning .alert-icon,
+.dialog-pane.mi-alert.error .alert-icon {
+    -fx-pref-width: 75;
+    -fx-pref-height: 90;
+    -fx-min-width: 75;
+    -fx-min-height: 90;
+    -fx-max-width: 75;
+    -fx-max-height: 90;
+}
+ 
+ 
+.dialog-pane.mi-alert.information .alert-icon {
+    -fx-background-image: url("/org/camilomartin/system/resources/image/Gumi_Imagen.png");
+}
+ 
+.dialog-pane.mi-alert.warning .alert-icon {
+    -fx-background-image: url("/org/camilomartin/system/resources/image/Neru_Imagen.png");
+}
+ 
+.dialog-pane.mi-alert.error .alert-icon {
+    -fx-background-image: url("/org/camilomartin/system/resources/image/Neru_Imagen.png");
+}
+ 
+.dialog-pane.mi-alert.confirmation .alert-icon {
+    -fx-background-image: url("/org/camilomartin/system/resources/image/Gumi_Imagen.png");
+}
+ 
+/* ---------- Tema por personaje: casi todo el cuadro toma su color ---------- */
+ 
+.dialog-pane.mi-alert.information,
+.dialog-pane.mi-alert.confirmation {
+    -fx-background-color: -card;
+    -fx-border-color: -success-deep;
+}
+ 
+.dialog-pane.mi-alert.information > .header-panel,
+.dialog-pane.mi-alert.confirmation > .header-panel {
+    -fx-background-color: -success;
+    -fx-border-color: transparent;
+}
+ 
+.dialog-pane.mi-alert.information > .header-panel .label,
+.dialog-pane.mi-alert.confirmation > .header-panel .label {
+    -fx-text-fill: -ink;
+}
+ 
+.dialog-pane.mi-alert.information .button-bar .button,
+.dialog-pane.mi-alert.confirmation .button-bar .button {
+    -fx-border-color: -success-deep;
+}
+ 
+.dialog-pane.mi-alert.information .button-bar .button:hover,
+.dialog-pane.mi-alert.confirmation .button-bar .button:hover {
+    -fx-background-color: -success;
+    -fx-border-color: -success-deep;
+    -fx-text-fill: -ink;
+}
+ 
+.dialog-pane.mi-alert.warning,
+.dialog-pane.mi-alert.error {
+    -fx-background-color: -card;
+    -fx-border-color: -warn-deep;
+}
+ 
+.dialog-pane.mi-alert.warning > .header-panel,
+.dialog-pane.mi-alert.error > .header-panel {
+    -fx-background-color: -warn-deep;
+    -fx-border-color: transparent;
+}
+ 
+.dialog-pane.mi-alert.warning > .header-panel .label,
+.dialog-pane.mi-alert.error > .header-panel .label {
+    -fx-text-fill: -ink;
+}
+ 
+.dialog-pane.mi-alert.warning .button-bar .button,
+.dialog-pane.mi-alert.error .button-bar .button {
+    -fx-border-color: -warn-deep;
+}
+ 
+.dialog-pane.mi-alert.warning .button-bar .button:hover,
+.dialog-pane.mi-alert.error .button-bar .button:hover {
+    -fx-background-color: -warn-deep;
+    -fx-border-color: derive(-warn-deep, -20%);
+    -fx-text-fill: -ink;
+}

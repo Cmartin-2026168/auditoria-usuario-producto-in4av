@@ -7,9 +7,6 @@ import org.camilomartin.system.utils.ViewFactory;
 
 public class Main extends Application {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         launch(args);
     }
@@ -19,5 +16,6 @@ public class Main extends Application {
         SceneManager.getInstanciaSceneManager().setMainStage(stageRoot);
         ViewFactory viewFacto = new ViewFactory();
         viewFacto.viewLogin();
-    
-}}
+
+    }
+}

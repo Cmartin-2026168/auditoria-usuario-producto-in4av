@@ -3,7 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Informatica/Desktop/2026168%20ves/S2/auditoria-usuario-producto-ves/src/org/camilomartin/system/model/User.java</file>
+            <file>file:/C:/Users/H18Y1/OneDrive/Escritorio/Taller%202/auditoria-usuario-producto-in4av/src/org/camilomartin/system/resources/styles/LoginStyles.css</file>
+            <file>file:/C:/Users/H18Y1/OneDrive/Escritorio/Taller%202/auditoria-usuario-producto-in4av/src/org/camilomartin/system/config/Enviroment.java</file>
+            <file>file:/C:/Users/H18Y1/OneDrive/Escritorio/Taller%202/auditoria-usuario-producto-in4av/nbproject/build-impl.xml</file>
+            <file>file:/C:/Users/H18Y1/OneDrive/Escritorio/Taller%202/auditoria-usuario-producto-in4av/src/org/camilomartin/system/service/UserService.java</file>
+            <file>file:/C:/Users/H18Y1/OneDrive/Escritorio/Taller%202/auditoria-usuario-producto-in4av/src/org/camilomartin/system/resources/styles/IdentityStyles.css</file>
+            <file>file:/C:/Users/H18Y1/OneDrive/Escritorio/Taller%202/auditoria-usuario-producto-in4av/src/org/camilomartin/system/repository/UserRepository.java</file>
+            <file>file:/C:/Users/H18Y1/OneDrive/Escritorio/Taller%202/auditoria-usuario-producto-in4av/src/org/camilomartin/system/utils/ViewFactory.java</file>
+            <file>file:/C:/Users/H18Y1/OneDrive/Escritorio/Taller%202/auditoria-usuario-producto-in4av/src/org/camilomartin/system/view/RegisterView.fxml</file>
+            <file>file:/C:/Users/H18Y1/OneDrive/Escritorio/Taller%202/auditoria-usuario-producto-in4av/src/org/camilomartin/system/config/ConexionDB.java</file>
         </group>
     </open-files>
 </project-private>

@@ -1,33 +1,29 @@
-/*
- * Tokens de identidad compartidos por Login y Registro.
- * Estilo tarjeta partida: panel blanco (formulario) + panel curvo en
- * degradado morado/violeta (llamado a la accion complementaria).
- */
 
 .root {
-    -ink: #17171F;
-    -muted: #8B8B95;
-    -field-bg: #F1F1F5;
-    -field-border: #E4E4EA;
+    -ink: #1A1210;
+    -muted: #8A8A94;
+    -field-bg: derive(#F0E4C8, 65%);
+    -field-border: -ink;
     -card: #FFFFFF;
-    -page-bg-1: #E7E7F7;
-    -page-bg-2: #ECEDF3;
-    -primary: #6A4CEC;
-    -primary-deep: #3B2296;
-    -primary-solid: #4B32B3;
-    -primary-solid-deep: #3A2591;
-    -primary-soft: rgba(106,76,236,0.16);
-    -error: #D3455B;
+    -page-bg-1: #F0E4C8;
+    -page-bg-2: derive(#F0E4C8, -8%);
+
+    /* Color protagonista por defecto (Login): rojo */
+    -primary: #E5471A;
+    -primary-deep: derive(-primary, -45%);
+    -primary-solid: #E8451E;
+    -primary-solid-deep: derive(-primary-solid, -20%);
+    -primary-soft: rgba(229,71,26,0.16);
+
+    -error: #D93A1E;
 }
 
-
-
 .root {
-    -fx-background-color: #f4f6fb;
+    -fx-background-color: -page-bg-1;
 }
 
 .barra-superior {
-    -fx-background-color: #1e293b;
+    -fx-background-color: -ink;
     -fx-padding: 16 24 16 24;
 }
 
@@ -35,50 +31,56 @@
     -fx-text-fill: white;
     -fx-font-size: 18px;
     -fx-font-weight: bold;
+    -fx-letter-spacing: 1.5px;
 }
 
 .texto-usuario {
-    -fx-text-fill: #cbd5e1;
+    -fx-text-fill: -page-bg-1;
     -fx-font-size: 13px;
+    -fx-font-weight: bold;
 }
 
 .menu-lateral {
-    -fx-background-color: #ffffff;
+    -fx-background-color: -card;
     -fx-padding: 20 12 20 12;
-    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0, 2, 0);
+    -fx-border-color: transparent -ink transparent transparent;
+    -fx-border-width: 0 4 0 0;
 }
 
 .boton-menu {
     -fx-background-color: transparent;
     -fx-text-fill: -primary-deep;
     -fx-font-size: 13px;
+    -fx-font-weight: bold;
     -fx-alignment: CENTER_LEFT;
     -fx-padding: 10 14 10 14;
-    -fx-background-radius: 999;
+    -fx-background-radius: 0;
     -fx-cursor: hand;
 }
 
 .boton-menu:hover {
-    -fx-background-color: -primary-soft;
-    -fx-text-fill: -primary-solid-deep;
+    -fx-background-color: -primary-solid;
+    -fx-text-fill: -ink;
 }
 
 .boton-menu-salir {
     -fx-background-color: transparent;
     -fx-text-fill: -error;
     -fx-font-size: 13px;
+    -fx-font-weight: bold;
     -fx-alignment: CENTER_LEFT;
     -fx-padding: 10 14 10 14;
-    -fx-background-radius: 999;
+    -fx-background-radius: 0;
     -fx-cursor: hand;
 }
 
 .boton-menu-salir:hover {
-    -fx-background-color: #fee2e2;
+    -fx-background-color: -error;
+    -fx-text-fill: white;
 }
 
 .panel-bienvenida {
     -fx-padding: 24;
     -fx-font-size: 14px;
-    -fx-text-fill: #64748b;
+    -fx-text-fill: -ink;
 }

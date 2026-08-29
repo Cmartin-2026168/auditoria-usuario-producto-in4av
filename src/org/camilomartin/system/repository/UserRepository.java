@@ -19,7 +19,7 @@ public class UserRepository implements UserInterface {
     @Override
     public void create(User user) {
         try {
-            callSP = conexionDB.getConnection()               //////
+            callSP = conexionDB.getConnection()
                     .prepareCall("{call sp_create_users (?,?,?,?,?)}");
             callSP.setString(1, user.getName());
             callSP.setString(2, user.getLastname());
@@ -45,7 +45,7 @@ public class UserRepository implements UserInterface {
     public User findByUser(String user) {
         User userFound = null;
         try {
-            statement = conexionDB.getConnection()   /////
+            statement = conexionDB.getConnection()
                     .prepareStatement("SELECT name, lastname, email, user, password, id_user FROM Users WHERE user = ?");
             statement.setString(1, user);
             result = statement.executeQuery();
