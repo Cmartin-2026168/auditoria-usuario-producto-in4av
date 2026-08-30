@@ -125,7 +125,7 @@ public class RegisterController implements Initializable {
                 PwdConfirmPassword.clear();
             }
             case ERROR_USER_CREATED ->
-                alertInfo.viewAlert("Error al registrar", "Error", "Ocurrió un problema al guardar el usuario", "error");
+                alertInfo.viewAlert("Error al registrar", "Error", "El correo ya esta registrado", "error");
             case EMPTY_FIELDS ->
                 alertInfo.viewAlert("Campos incompletos", "Error de Campo", "Por favor, rellene todos los campos", "error");
             default -> {

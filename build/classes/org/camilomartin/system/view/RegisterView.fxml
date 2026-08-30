@@ -110,7 +110,7 @@
             <VBox prefHeight="609.0" prefWidth="379.0" styleClass="panel-color" StackPane.alignment="CENTER_RIGHT">
                <children>
                   <Label styleClass="panel-titulo" text="¿Ya tienes cuenta?" />
-                  <Label styleClass="panel-cuerpo" text="Inicia sesión para seguir comprando y revisar tus pedidos." />
+                  <Label styleClass="panel-cuerpo" text="Inicia sesión para acceder a nuestros servicios" />
                   <Button fx:id="btnCancelRegister" mnemonicParsing="false" onMouseClicked="#onCancelRegister" styleClass="boton-fantasma" text="INICIAR SESIÓN">
                      <VBox.margin>
                         <Insets top="6.0" />

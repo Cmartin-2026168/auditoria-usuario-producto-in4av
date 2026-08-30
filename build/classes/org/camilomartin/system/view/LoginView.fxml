@@ -71,7 +71,7 @@
             <VBox maxWidth="381.0" prefHeight="496.0" prefWidth="381.0" styleClass="panel-color" StackPane.alignment="CENTER_RIGHT">
                <children>
                   <Label styleClass="panel-titulo" text="¡Hola!" />
-                  <Label styleClass="panel-cuerpo" text="Crea una cuenta de cliente para comprar nuestros productos y llevar el control de tus pedidos." />
+                  <Label styleClass="panel-cuerpo" text="Crea una cuenta de cliente para poder acceder a todos nuestros servicios" />
                   <Hyperlink fx:id="linkRegistro" onAction="#onRegister" styleClass="boton-fantasma" text="CREAR CUENTA">
                      <VBox.margin>
                         <Insets top="6.0" />

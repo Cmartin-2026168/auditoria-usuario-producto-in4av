@@ -1,19 +1,5 @@
 @import "IdentityStyles.css";
- 
-/*
- * Estilos del Alert (DialogPane). Reutiliza -ink, -card, -muted, -error de
- * IdentityStyles.css. -warn (amarillo) y -success (verde) son propios de
- * este archivo: son colores de la paleta original que no forman parte de
- * la paleta ya limitada de Login/Registro, pero tienen sentido semantico
- * aqui (advertencia / exito).
- */
-/*
- * Paleta enviada, reducida a los dos colores que pidieron como
- * dominantes por personaje:
- *  - Neru (pelo amarillo) -> warning + error: #E0A83A
- *  - Gumi (pelo verde)    -> information + confirmation: #8FAE6E
- *  - Neutros compartidos: #1A1210 (-ink) #F0E4C8 (-page-bg) #8A8A94 (-muted)
- */
+
 .root {
     -warn-deep: #E0A83A;
     -success: #8FAE6E;
@@ -25,11 +11,7 @@
     -fx-border-color: -ink;
     -fx-border-width: 4;
     -fx-font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    /* El hueco horizontal entre un titulo corto y el icono no es padding:
-       es que el header-panel es un GridPane donde la columna del texto
-       se estira para llenar el ancho del dialogo, empujando el icono a
-       la derecha. Limitar el ancho del dialog-pane fuerza a esa columna
-       a ocupar menos espacio, acercando el icono al texto. */
+    
     -fx-max-width: 380;
     -fx-pref-width: 360;
 }
@@ -75,13 +57,7 @@
 }
  
 /* ---------- Icono: Region vacio estilizado como imagen de fondo ---------- */
- 
-/* El header-panel de JavaFX envuelve el graphic en un StackPane
-   ".graphic-container" que trae su propio padding por defecto (aparte
-   del -fx-padding del header-panel). Ese padding es el que deja el
-   espacio en blanco alrededor del icono. Lo quitamos para que la
-   imagen aproveche todo el alto/ancho disponible sin agrandar el
-   header-panel en si. */
+
 .dialog-pane.mi-alert > .header-panel > .graphic-container {
     -fx-padding: 0;
     -fx-alignment: center;
@@ -90,10 +66,7 @@
 .dialog-pane.mi-alert .alert-icon {
     -fx-background-repeat: no-repeat;
     -fx-background-position: center;
-    /* "contain" para que la imagen se vea completa, sin recortes.
-       El ancho/alto de la caja ya no es un cuadrado fijo: cada
-       personaje tiene una proporcion distinta (ver reglas de abajo),
-       asi que contain la llena casi por completo sin dejar aire. */
+    
     -fx-background-size: contain;
 }
  
@@ -119,8 +92,6 @@
     -fx-max-height: 90;
 }
  
-/* Coloca tus PNG/SVG en src/main/resources/images/ con estos nombres,
-   o cambia la ruta de cada url() por la tuya. */
  
 .dialog-pane.mi-alert.information .alert-icon {
     -fx-background-image: url("/org/camilomartin/system/resources/image/Gumi_Imagen.png");
@@ -139,10 +110,6 @@
 }
  
 /* ---------- Tema por personaje: casi todo el cuadro toma su color ---------- */
-/* Antes solo la franja del header cambiaba de color; ahora el fondo
-   del dialog-pane completo (detras del texto), el header y el hover
-   de los botones usan el mismo color, para que cuando aparece Gumi
-   predomine el verde y cuando aparece Neru predomine el amarillo. */
  
 .dialog-pane.mi-alert.information,
 .dialog-pane.mi-alert.confirmation {

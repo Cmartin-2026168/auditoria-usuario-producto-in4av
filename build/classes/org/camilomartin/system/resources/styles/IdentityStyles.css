@@ -1,13 +1,3 @@
-/*
- * Tokens de identidad compartidos por Login y Registro.
- * Paleta LIMITADA: neutros (tinta / gris / crema / blanco) + UN solo
- * color protagonista por pantalla (rojo en Login, turquesa en Registro,
- * definido via -primary / -primary-solid).
- *
- * Sin efectos 3D (sombras) y sin bordes de color: los bordes son
- * siempre neutros (-ink) o transparentes; el color solo aparece en
- * rellenos solidos (fondos, botones).
- */
 
 .root {
     -ink: #1A1210;

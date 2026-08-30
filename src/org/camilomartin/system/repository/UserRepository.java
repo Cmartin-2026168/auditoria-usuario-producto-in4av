@@ -19,6 +19,9 @@ public class UserRepository implements UserInterface {
     @Override
     public void create(User user) {
         try {
+            if (findByEmail(user.getEmail()) != null) {
+                throw new RuntimeException("El correo ya esta Registrado");
+            }
             callSP = conexionDB.getConnection()
                     .prepareCall("{call sp_create_users (?,?,?,?,?)}");
             callSP.setString(1, user.getName());
@@ -48,6 +51,40 @@ public class UserRepository implements UserInterface {
             statement = conexionDB.getConnection()
                     .prepareStatement("SELECT name, lastname, email, user, password, id_user FROM Users WHERE user = ?");
             statement.setString(1, user);
+            result = statement.executeQuery();
+
+            if (result.next()) {
+                userFound = new User();
+                userFound.setName(result.getString("name"));
+                userFound.setLastname(result.getString("lastname"));
+                userFound.setEmail(result.getString("email"));
+                userFound.setUser(result.getString("user"));
+                userFound.setPassword(result.getString("password"));
+                userFound.setIdUser(result.getString("id_user"));
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(UserRepository.class.getName()).log(Level.SEVERE, null, ex);
+            throw new RuntimeException(ex);
+        } finally {
+            try {
+                if (result != null) {
+                    result.close();
+                }
+                if (statement != null) {
+                    statement.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(UserRepository.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return userFound;
+    }
+    public User findByEmail(String email) {
+        User userFound = null;
+        try {
+            statement = conexionDB.getConnection()
+                    .prepareStatement("SELECT name, lastname, email, user, password, id_user FROM Users WHERE email = ?");
+            statement.setString(1, email);
             result = statement.executeQuery();
 
             if (result.next()) {
